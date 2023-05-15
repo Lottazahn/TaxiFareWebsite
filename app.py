@@ -24,4 +24,18 @@ if st.button('Search'):
 
     response = requests.get(url, headers=headers, params=querystring)
 
-    print(response.json())
+  data = response.json()
+
+    # Display cocktail details
+    if 'drinks' in data:
+        for drink in data['drinks']:
+            drink_name = drink['strDrink']
+            drink_image = drink['strDrinkThumb']
+
+            # Display cocktail name
+            st.write(f"Cocktail Name: {drink_name}")
+
+            # Display cocktail image
+            st.image(drink_image, caption=drink_name, use_column_width=True)
+    else:
+        st.write("No cocktails found for the given ingredient.")
