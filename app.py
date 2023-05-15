@@ -4,7 +4,9 @@ import requests
 st.title("Recipe Finder")
 
 # What do we see?
-meal = st.text_input("Which meal do you eat?", value="pizza margherita")
+name = st.text_input("Any keyword?", value="tasty")
+includeIngredients = st.text_input("Which ingredient should be included?", value="tomatoes")
+
 
 # Button
 if st.button('Search'):
