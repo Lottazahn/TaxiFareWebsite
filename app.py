@@ -18,5 +18,17 @@ if st.button('Search'):
                "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"}
         
     response = requests.get(url, headers=headers, params=querystring)
+    title = response.json()["result"][0]["title"]
+    calories = response.json()["result][0]["calories"]
+    protein = response.json()["result"][0]["protein"]
+    fat = response.json()["result"][0]["fat"]
+    gram = response.json()["result"][0]["gram"]                           
+                               
+    st.image(posterURLs,width = 400)
+    st.write(title, "|" ,gram)
+    st.write("calories:",calories)
+    st.write("protein:",protein)
+    st.write("fat:",fat)                           
+    
 
-    print(response.json())
+    
