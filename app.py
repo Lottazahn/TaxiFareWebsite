@@ -26,7 +26,12 @@ if st.button('Search'):
 }
         
     response = requests.get(url, headers=headers, params=querystring)
-    print(response.json())
+    	name = response.json()["result"][0]["name"]
+	tags = response.json()["result"][0]["name"]
+	
+	
+	st.write(name)
+	st.write("Specialty: ",tags)
 	
 
 
