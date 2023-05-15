@@ -22,22 +22,31 @@ headers = {
 }
 
 response = requests.get(url, headers=headers, params=querystring)
-name = response.json()["result"][0]["name"]
-tags = response.json()["result"][0]["tags"]
-description = response.json()["result"][0]["description"]
-prepareTime = response.json()["result"][0]["prepareTime"]
-cookTime = response.json()["result"][0]["cookTime"]
-ingredients = response.json()["result"][0]["ingredients"]
-steps = response.json()["result"][0]["steps"]
-servings = response.json()["result"][0]["servings"]
-nutrients = response.json()["result"][0]["nutrients"]
+if response.ok:
+        recipe_data = response.json().get("result")
+        if recipe_data and len(recipe_data) > 0:
+            recipe = recipe_data[0]
+            name = recipe.get("name")
+            tags = recipe.get("tags")
+            description = recipe.get("description")
+            prepareTime = recipe.get("prepareTime")
+            cookTime = recipe.get("cookTime")
+            ingredients = recipe.get("ingredients")
+            steps = recipe.get("steps")
+            servings = recipe.get("servings")
+            nutrients = recipe.get("nutrients")
 
-st.write(name)
-st.write("Special requirements: ",tags)
-st.write("Details: ",description)
-st.write("Preparation Time: ",prepareTime)
-st.write("Cooking Time: ",cookTime)
-st.write("Steps: ",steps)
-st.write("Servings: ",servings)
-st.write("Nutrients: ",nutrients)
+            st.write("Name:", name)
+            st.write("Special requirements:", tags)
+            st.write("Description:", description)
+            st.write("Preparation Time:", prepareTime)
+            st.write("Cooking Time:", cookTime)
+            st.write("Ingredients:", ingredients)
+            st.write("Steps:", steps)
+            st.write("Servings:", servings)
+            st.write("Nutrients:", nutrients)
+        else:
+            st.write("No recipes found.")
+    else:
+        st.write("Error occurred while fetching recipes.")
        
