@@ -1,8 +1,6 @@
 
 import streamlit as st
 
-import datetime
-
 import requests
 
 '''
@@ -10,10 +8,11 @@ import requests
 
 
 -- what do we see?
-ingredient = st.text_input ("Which ingredient would you like to use?",value="vodka")
+ingredient = st.text_input("Which ingredient would you like to use?",value="vodka")
 
 -- button
 if st.button('Search'):
+url = "https://the-cocktail-db.p.rapidapi.com/search.php"
 
 -- API
 # enter here the address of your flask api
