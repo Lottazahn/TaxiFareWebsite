@@ -1,4 +1,3 @@
-
 import streamlit as st
 import requests
 
@@ -23,8 +22,7 @@ if st.button('Search'):
     }
 
     response = requests.get(url, headers=headers, params=querystring)
-
-  data = response.json()
+    data = response.json()
 
     # Display cocktail details
     if 'drinks' in data:
