@@ -1,31 +1,27 @@
 
 import streamlit as st
-
 import requests
 
 '''
 # Recipe Finder
+'''
 
+# What do we see?
+ingredient = st.text_input("Which ingredient would you like to use?", value="vodka")
 
--- what do we see?
-ingredient = st.text_input("Which ingredient would you like to use?",value="vodka")
-
--- button
+# Button
 if st.button('Search'):
-url = "https://the-cocktail-db.p.rapidapi.com/search.php"
+    url = "https://the-cocktail-db.p.rapidapi.com/search.php"
 
--- API
-# enter here the address of your flask api
+    # API
+    # Enter here the address of your Flask API
+    querystring = {"s": f"{ingredient}"}
 
-querystring = {"s":f"{vodka}"}
+    headers = {
+        "X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
+        "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com"
+    }
 
-headers = {
-	"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
-	"X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com"
-}
+    response = requests.get(url, headers=headers, params=querystring)
 
-response = requests.get(url, headers=headers, params=querystring)
-
-print(response.json())
-
-
+    print(response.json())
