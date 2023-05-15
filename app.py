@@ -5,7 +5,10 @@ st.title("Recipe Finder")
 
 # What do we see?
 name = st.text_input("Any keyword?", value="tasty")
+tags = st.text_input("Any specific requirement?", value="gluten-free")
 includeIngredients = st.text_input("Which ingredient should be included?", value="tomatoes")
+maxCalories = st.integer_input("How many calories should it max have?", value=100)
+maxPrepareTime = st.integer_input("How much time do you have (in minutes)?", value=50)
 
 
 # Button
@@ -23,9 +26,8 @@ if st.button('Search'):
 }
         
     response = requests.get(url, headers=headers, params=querystring)
-    name = response.json()["result"][0]["name"]	
-
-st.write(name)
+    print(response.json())
+	
 
 
     
