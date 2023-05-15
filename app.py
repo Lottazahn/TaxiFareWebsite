@@ -15,11 +15,11 @@ if st.button('Search'):
     url = "https://low-carb-recipes.p.rapidapi.com/search"
 
     querystring = {
-        "name": name,
-        "tags": tags,
-        "includeIngredients": includeIngredients,
-        "maxCalories": maxCalories,
-        "maxPrepareTime": maxPrepareTime
+        "name":f"{name}",
+        "tags":f"{tags}",
+        "includeIngredients":f"{includeIngredients}",
+        "maxCalories": "maxCalories",
+        "maxPrepareTime": "maxPrepareTime"
     }
 
     headers = {
