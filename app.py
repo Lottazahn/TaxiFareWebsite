@@ -22,6 +22,22 @@ headers = {
 }
 
 response = requests.get(url, headers=headers, params=querystring)
+name = response.json()["result"][0]["name"]
+tags = response.json()["result"][0]["tags"]
+description = response.json()["result"][0]["description"]
+prepareTime = response.json()["result"][0]["prepareTime"]
+cookTime = response.json()["result"][0]["cookTime"]
+ingredients = response.json()["result"][0]["ingredients"]
+steps = response.json()["result"][0]["steps"]
+servings = response.json()["result"][0]["servings"]
+nutrients = response.json()["result"][0]["nutrients"]
 
-print(response.json())
-        
+st.write(name)
+st.write("Special requirements: ",tags)
+st.write("Details: ",description)
+st.write("Preparation Time: ",prepareTime)
+st.write("Cooking Time: ",cookTime)
+st.write("Steps: ",steps)
+st.write("Servings: ",servings)
+st.write("Nutrients: ",nutrients)
+       
