@@ -17,7 +17,7 @@ url = "https://the-cocktail-db.p.rapidapi.com/search.php"
 -- API
 # enter here the address of your flask api
 
-querystring = {"s":"vodka"}
+querystring = {"s":f"{vodka}"}
 
 headers = {
 	"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
