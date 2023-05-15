@@ -20,4 +20,3 @@ if st.button('Search'):
     response = requests.get(url, headers=headers, params=querystring)
 
     st.json(response.json())
-``
