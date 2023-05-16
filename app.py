@@ -56,6 +56,8 @@ if st.button('Search'):
 	st.write("Ingredients:")
 	for x in range(len(response.json()[0]["ingredients"])):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
+		st.write(ingredient_name)
+		
 		
 			
 	
