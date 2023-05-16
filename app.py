@@ -53,9 +53,8 @@ if st.button('Search'):
 	for x in range(len(response.json()[0]["steps"])):
 		steps_details = response.json()[0]["steps"][x]
 		st.write("-", steps_details)
-	st.write("
-		 
-		 ")
+
+		
 	st.write("Ingredients:")
 	for x in range(len(response.json()[0]["ingredients"])):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
