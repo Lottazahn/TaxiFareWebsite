@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("What do I want to eat?")
+st.title("What should I cook today?")
 
 # What do we see?
 name = st.text_input("Any idea?", value="cake")
@@ -53,12 +53,15 @@ if st.button('Search'):
 	for x in range(len(response.json()[0]["steps"])):
 		steps_details = response.json()[0]["steps"][x]
 		st.write("-", steps_details)
-
-		
+	
 	st.write("Ingredients:")
 	for x in range(len(response.json()[0]["ingredients"])):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
 		st.write("-",ingredient_name)
+	
+	line = ", ".join("nutrients")
+	st.write(line)
+	
 		
 		
 			
