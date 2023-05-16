@@ -14,42 +14,42 @@ maxPrepareTime = st.number_input("How much time do I have (in minutes)?", value=
 if st.button('Search'):
 	url = "https://low-carb-recipes.p.rapidapi.com/search"
 
-querystring = {"name":f"{name}",
-	       "tags":f"{tags}",
-	       "includeIngredients":f"{includeIngredients}",
-	       "excludeIngredients":"cinnamon",
-	       "maxPrepareTime":f"{maxPrepareTime}",
-	       "maxCookTime":"20",
-	       "maxCalories":f"{maxCalories}",
-	       "maxNetCarbs":"5",
-	       "maxSugar":"3",
-	       "maxAddedSugar":"0",
-	       "limit":"10"}
+	querystring = {"name":f"{name}",
+		       "tags":f"{tags}",
+		       "includeIngredients":f"{includeIngredients}",
+		       "excludeIngredients":"cinnamon",
+		       "maxPrepareTime":f"{maxPrepareTime}",
+		       "maxCookTime":"20",
+		       "maxCalories":f"{maxCalories}",
+		       "maxNetCarbs":"5",
+		       "maxSugar":"3",
+		       "maxAddedSugar":"0",
+		       "limit":"10"}
 
-headers = {
-	"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
-	"X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com"
-}
+	headers = {
+		"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
+		"X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com"
+	}
 
-response = requests.get(url, headers=headers, params=querystring)
-response_name = response.json()["result"][0]["name"]
-tags_special = response.json()["result"][0]["tags"]
-description = response.json()["result"][0]["description"]
-max_PrepareTime = response.json()["result"][0]["maxPrepareTime"]
-cookTime = response.json()["result"][0]["cookTime"]
-include_Ingredients = response.json()["result"][0]["includeIngredients"]
-steps = response.json()["result"][0]["steps"]
-servings = response.json()["result"][0]["servings"]
-maxCalories = response.json()["result"][0]["maxCalories"]
+	response = requests.get(url, headers=headers, params=querystring)
+	response_name = response.json()["result"][0]["name"]
+	tags_special = response.json()["result"][0]["tags"]
+	description = response.json()["result"][0]["description"]
+	max_PrepareTime = response.json()["result"][0]["maxPrepareTime"]
+	cookTime = response.json()["result"][0]["cookTime"]
+	include_Ingredients = response.json()["result"][0]["includeIngredients"]
+	steps = response.json()["result"][0]["steps"]
+	servings = response.json()["result"][0]["servings"]
+	maxCalories = response.json()["result"][0]["maxCalories"]
 
-st.write(response_name)
-st.write("Special requirements: ",tags_special)
-st.write("Included ingredients: ",include_Ingredients)
-st.write("Details: ",description)
-st.write("Preparation Time: ",max_PrepareTime)
-st.write("Cooking Time: ",cookTime)
-st.write("Steps: ",steps)
-st.write("Servings: ",servings)
-st.write("Calories: ",maxCalories)
+	st.write(response_name)
+	st.write("Special requirements: ",tags_special)
+	st.write("Included ingredients: ",include_Ingredients)
+	st.write("Details: ",description)
+	st.write("Preparation Time: ",max_PrepareTime)
+	st.write("Cooking Time: ",cookTime)
+	st.write("Steps: ",steps)
+	st.write("Servings: ",servings)
+	st.write("Calories: ",maxCalories)
 
        
