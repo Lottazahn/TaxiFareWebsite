@@ -44,7 +44,7 @@ if st.button('Search'):
 	maxCalories = response.json()[0]["nutrients"]
      
 	
-	st.write(f"**{response_name}**, " | ", servings, " servings")
+	st.write(**response_name**, " | ", servings, " servings")
 	st.image(image_url,width = 400)
 	st.write("Cooking Time: ",cookTime)
 	st.write("Preparation Time: ",maxPrepareTime)
