@@ -50,16 +50,16 @@ if st.button('Search'):
 	st.write("Preparation Time: ",maxPrepareTime)
 	st.write("Details: ",description)
 	st.write("Ingredients:")
+	st.write("Steps:")
+	for x in range(len(response.json()[0]["steps"])):
+		steps_details = response.json()[0]["steps"][x]
+		st.write("-", steps_details)
 	for x in range(len(response.json()[0]["ingredients"])):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
 		for x in range(len(response.json()[0]["servingSize"])):
 			size = response.json()[0]["servingSize"][x]["qty"]
 			st.write(ingredient_name, "-", size)
 			
-	st.write("Steps:")
-	for x in range(len(response.json()[0]["steps"])):
-		steps_details = response.json()[0]["steps"][x]
-		st.write("-", steps_details)
 	
 	
 
