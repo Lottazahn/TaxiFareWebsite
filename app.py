@@ -18,8 +18,7 @@ if st.button('Search'):
 		       "tags":f"{tags}",
 		       "includeIngredients":f"{includeIngredients}",
 		       "maxPrepareTime":f"{maxPrepareTime}",
-		       "maxCalories":f"{maxCalories}",
-		       }
+		       "maxCalories":f"{maxCalories}"}
 
 	headers = {
 		"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
