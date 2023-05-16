@@ -36,7 +36,6 @@ if st.button('Search'):
 
 	response = requests.get(url, headers=headers, params=querystring)
 	response_name = response.json()[0]["name"]
-	tags_special = response.json()[0]["tags"]
 	image_url = response.json()[0]["image"]
 	max_PrepareTime = response.json()[0]["prepareTime"]
 	cookTime = response.json()[0]["cookTime"]
@@ -47,7 +46,6 @@ if st.button('Search'):
 	
 	st.write(response_name, " | ", servings, " servings")
 	st.image(image_url,width = 400)
-	st.write("Special requirements: ",tags_special)
 	st.write("Cooking Time: ",cookTime)
 	st.write("Preparation Time: ",maxPrepareTime)
 	st.write("Details: ",description)
@@ -62,10 +60,6 @@ if st.button('Search'):
 		steps_details = response.json()[0]["steps"][x]
 		st.write("-", steps_details)
 	
-	st.write("Special requirements:")
-	for x in range(len(response.json()[0]["tags"])):
-		tags_special = response.json()[0]["tags"][x]
-		st.write(tags_special)
 	
 
 
