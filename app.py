@@ -37,7 +37,7 @@ if st.button('Search'):
 	response_name = response.json()[0]["name"]
 	tags_special = response.json()[0]["tags"]
 	image_url = response.json()[0]["image"]
-	max_PrepareTime = response.json()[0]["maxPrepareTime"]
+	max_PrepareTime = response.json()[0]["prepareTime"]
 	cookTime = response.json()[0]["cookTime"]
 	servings = response.json()[0]["servings"]
 	include_Ingredients = response.json()[0]["includeIngredients"]
