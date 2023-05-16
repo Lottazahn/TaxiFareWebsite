@@ -40,10 +40,10 @@ if st.button('Search'):
 	max_PrepareTime = response.json()[0]["prepareTime"]
 	cookTime = response.json()[0]["cookTime"]
 	servings = response.json()[0]["servings"]
-	include_Ingredients = response.json()[0]["includeIngredients"]
+	include_Ingredients = response.json()[0]["ingredients"]
 	description = response.json()[0]["description"]
 	steps = response.json()[0]["steps"]
-	maxCalories = response.json()[0]["maxCalories"]
+	maxCalories = response.json()[0]["calories"]
 
 	st.write(response_name, " | ", servings, " servings", " | ", calories, " calories")
 	
