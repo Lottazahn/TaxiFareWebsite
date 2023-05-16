@@ -32,7 +32,7 @@ headers = {
 }
 
 response = requests.get(url, headers=headers, params=querystring)
-response.json()
+print(response.json())
 
 
        
