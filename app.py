@@ -59,7 +59,7 @@ if st.button('Search'):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
 		st.write("-",ingredient_name)
 	
-	line = ", ".join(nutrients)
+	line = ", ".join(maxCalories)
 	st.write(line)
 	
 		
