@@ -30,7 +30,7 @@ if st.button('Search'):
 		"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
 		"X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com"
 	}
-	st.write(response.json()[0])
+	st.write(response.json())
 	
 # 	response = requests.get(url, headers=headers, params=querystring)
 # 	response_name = response.json()[0]["0"]["name"]
