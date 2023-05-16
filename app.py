@@ -44,7 +44,7 @@ if st.button('Search'):
 	maxCalories = response.json()[0]["nutrients"]
      
 	
-	st.write(**response_name**, " | ", servings, " servings")
+	st.write(response_name, " | ", servings, " servings")
 	st.image(image_url,width = 400)
 	st.write("Cooking Time: ",cookTime)
 	st.write("Preparation Time: ",maxPrepareTime)
@@ -52,8 +52,9 @@ if st.button('Search'):
 	st.write("Ingredients:")
 	for x in range(len(response.json()[0]["ingredients"])):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
-		gggg = response.json()[0]["ingredients"][x]["servingSize"]
-		st.write(ingredient_name, "-", gggg)
+		for x in range(len(response.json()[0]["servingSize"])):
+			size = response.json()[0]["servingSize"][x]["qty"]
+			st.write(ingredient_name, "-", size)
 			
 	st.write("Steps:")
 	for x in range(len(response.json()[0]["steps"])):
