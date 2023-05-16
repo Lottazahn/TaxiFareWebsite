@@ -44,7 +44,7 @@ if st.button('Search'):
 	description = response.json()[0]["description"]
 	steps = response.json()[0]["steps"]
 	maxCalories = response.json()[0]["nutrients"]
-
+	
 	st.write(response_name, " | ", servings, " servings")
 	st.write("Special requirements: ",tags_special)
 	st.image(image_url,width = 400)
@@ -55,6 +55,8 @@ if st.button('Search'):
 	st.write("Steps: ",steps)
 	st.write("Nutrients: ",maxCalories)
 	
+	for x in range(len(response.json[0]["ingredients"])):
+	  st.write("Ingredients: ",["ingredients"][x]["name"])
 	
 	
 
