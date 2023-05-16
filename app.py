@@ -12,7 +12,7 @@ maxPrepareTime = st.number_input("How much time do I have (in minutes)?", value=
 
 # Button
 if st.button('Search'):
-    url = "https://low-carb-recipes.p.rapidapi.com/search"
+        url = "https://low-carb-recipes.p.rapidapi.com/search"
 
 querystring = {"name":f"{name}",
 	       "tags":f"{tags}",
