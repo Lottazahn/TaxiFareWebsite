@@ -29,24 +29,10 @@ if st.button('Search'):
 #	st.write(response.json())
 	
 	response = requests.get(url, headers=headers, params=querystring)
-	response_name = response.json()[0]["0"]["name"]
+	response_name = response.json()[0]{"0"}["name"]
 	tags_special = response.json()[0]["0"]["tags"]
-	description = response.json()[0]["0"]["description"]
-	max_PrepareTime = response.json()[0]["0"]["maxPrepareTime"]
-	cookTime = response.json()[0]["0"]["cookTime"]
-	include_Ingredients = response.json()[0]["0"]["includeIngredients"]
-	steps = response.json()[0]["0"]["steps"]
-	servings = response.json()[0]["0"]["servings"]
-	maxCalories = response.json()[0]["0"]["maxCalories"]
-
+	
 	st.write(response_name)
 	st.write("Special requirements: ",tags_special)
-	st.write("Included ingredients: ",include_Ingredients)
-	st.write("Details: ",description)
-	st.write("Preparation Time: ",max_PrepareTime)
-	st.write("Cooking Time: ",cookTime)
-	st.write("Steps: ",steps)
-	st.write("Servings: ",servings)
-	st.write("Calories: ",maxCalories)
 
        
