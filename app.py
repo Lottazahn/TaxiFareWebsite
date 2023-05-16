@@ -14,7 +14,7 @@ maxPrepareTime = st.number_input("How much time do I have (in minutes)?", value=
 if st.button('Search'):
     url = "https://low-carb-recipes.p.rapidapi.com/search"
 
-querystring = {"name":"cake","tags":"keto;dairy-free","includeIngredients":"egg;butter","excludeIngredients":"cinnamon","maxPrepareTime":"10","maxCookTime":"20","maxCalories":"500","maxNetCarbs":"5","maxSugar":"3","maxAddedSugar":"0","limit":"10"}
+querystring = {"name":f"{cake}","tags":f"{keto;dairy-free}","includeIngredients":f"{egg;butter}","excludeIngredients":f"{cinnamon}","maxPrepareTime":"10","maxCookTime":"20","maxCalories":"500","maxNetCarbs":"5","maxSugar":"3","maxAddedSugar":"0","limit":"10"}
 
 headers = {
 	"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
