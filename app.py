@@ -43,7 +43,7 @@ if st.button('Search'):
 	include_Ingredients = response.json()[0]["ingredients"]
 	description = response.json()[0]["description"]
 	steps = response.json()[0]["steps"]
-	maxCalories = response.json()[0]["calories"]
+	maxCalories = response.json()[0]["nutrients"]
 
 	st.write(response_name, " | ", servings, " servings", " | ", calories, " calories")
 	
