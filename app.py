@@ -25,12 +25,34 @@ if st.button('Search'):
 		"X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com"
 	}
 	
-	response = requests.get(url, headers=headers, params=querystring)
-	st.write(response.json())
+#	response = requests.get(url, headers=headers, params=querystring)
+#	st.write(response.json())
 	
 #	response = requests.get(url, headers=headers, params=querystring)
 #	tags_special = response.json()[0]["tags"]
+#	tags_special = response.json()[0]["tags"]
 	
 #	st.write("Special requirements: ",tags_special)
+
+	response_name = response.json()[0]["name"]
+	tags_special = response.json()[0]["tags"]
+	image_url = response.json()[0]["image"]
+	max_PrepareTime = response.json()[0]["maxPrepareTime"]
+	cookTime = response.json()[0]["cookTime"]
+	servings = response.json()[0]["servings"]
+	include_Ingredients = response.json()[0]["includeIngredients"]
+	description = response.json()[0]["description"]
+	steps = response.json()[0]["steps"]
+	maxCalories = response.json()[0]["maxCalories"]
+
+	st.write(response_name, " | ", servings, " servings", " | ", calories, " calories")
+	st.write("Special requirements: ",tags_special)
+	st.image(image_url,width = 400)
+	st.write("Cooking Time: ",cookTime)
+	st.write("Preparation Time: ",max_PrepareTime)
+	st.write("Included ingredients: ",include_Ingredients)
+	st.write("Details: ",description)
+	st.write("Steps: ",steps)
+
 
        
