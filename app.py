@@ -25,12 +25,12 @@ if st.button('Search'):
 		"X-RapidAPI-Host": "low-carb-recipes.p.rapidapi.com"
 	}
 	
-#	response = requests.get(url, headers=headers, params=querystring)
-#	st.write(response.json())
-	
 	response = requests.get(url, headers=headers, params=querystring)
-	tags_special = response.json()[0]["tags"]
+	st.write(response.json())
 	
-	st.write("Special requirements: ",tags_special)
+#	response = requests.get(url, headers=headers, params=querystring)
+#	tags_special = response.json()[0]["tags"]
+	
+#	st.write("Special requirements: ",tags_special)
 
        
