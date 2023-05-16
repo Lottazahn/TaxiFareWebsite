@@ -33,6 +33,7 @@ if st.button('Search'):
 #	tags_special = response.json()[0]["tags"]
 	
 #	st.write("Special requirements: ",tags_special)
+
 	response = requests.get(url, headers=headers, params=querystring)
 	response_name = response.json()[0]["name"]
 	tags_special = response.json()[0]["tags"]
@@ -54,10 +55,9 @@ if st.button('Search'):
 	for x in range(len(response.json()[0]["ingredients"])):
 		ingredient_name = response.json()[0]["ingredients"][x]["name"]
 		st.write("Ingredients: ", ingredient_name)
-		gggg=response.json()[0]["ingredients"][x]["servingSize"]
-		st.write("Serving size: ",ggg)
+		gggg = response.json()[0]["ingredients"][x]["servingSize"]
+		st.write("Serving size: ",gggg)
 	st.write("Steps: ",steps)
-	st.write("Nutrients: ",maxCalories)
 	
 
 	
