@@ -14,17 +14,20 @@ maxPrepareTime = st.number_input("How much time do I have (in minutes)?", value=
 if st.button('Search'):
     url = "https://low-carb-recipes.p.rapidapi.com/search"
 
-querystring = {"name":f"{name}",
-	       "tags":f"{tags}",
-	       "includeIngredients":f"{includeIngredients}",
+
+querystring = {"name":f"{cake}",
+	       "tags":f"{keto;dairy-free}",
+	       "includeIngredients":f"{egg;butter}",
 	       "excludeIngredients":"cinnamon",
-	       "maxPrepareTime":f"{maxPrepareTime}",
+	       "maxPrepareTime":f"{10}",
 	       "maxCookTime":"20",
-	       "maxCalories":f"{maxCalories}",
+	       "maxCalories":f"{500}",
 	       "maxNetCarbs":"5",
 	       "maxSugar":"3",
 	       "maxAddedSugar":"0",
 	       "limit":"10"}
+
+
 
 headers = {
 	"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
@@ -32,7 +35,24 @@ headers = {
 }
 
 response = requests.get(url, headers=headers, params=querystring)
-print(response.json())
 
+response_name = response.json()["result"][0]["name"]
+tags = response.json()["result"][0]["tags"]
+description = response.json()["result"][0]["description"]
+maxPrepareTime = response.json()["result"][0]["maxPrepareTime"]
+cookTime = response.json()["result"][0]["cookTime"]
+includeIngredients = response.json()["result"][0]["includeIngredients"]
+steps = response.json()["result"][0]["steps"]
+servings = response.json()["result"][0]["servings"]
+maxCalories = response.json()["result"][0]["maxCalories"]
+
+st.write(name)
+st.write("Special requirements: ",tags)
+st.write("Details: ",description)
+st.write("Preparation Time: ",maxPrepareTime)
+st.write("Cooking Time: ",cookTime)
+st.write("Steps: ",steps)
+st.write("Servings: ",servings)
+st.write("Calories: ",maxCalories)
 
        
