@@ -33,7 +33,7 @@ if st.button('Search'):
 #	tags_special = response.json()[0]["tags"]
 	
 #	st.write("Special requirements: ",tags_special)
-
+	response = requests.get(url, headers=headers, params=querystring)
 	response_name = response.json()[0]["name"]
 	tags_special = response.json()[0]["tags"]
 	image_url = response.json()[0]["image"]
