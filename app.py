@@ -46,13 +46,7 @@ if st.button('Search'):
 	maxCalories = response.json()[0]["maxCalories"]
 
 	st.write(response_name, " | ", servings, " servings", " | ", calories, " calories")
-	st.write("Special requirements: ",tags_special)
-	st.image(image_url,width = 400)
-	st.write("Cooking Time: ",cookTime)
-	st.write("Preparation Time: ",max_PrepareTime)
-	st.write("Included ingredients: ",include_Ingredients)
-	st.write("Details: ",description)
-	st.write("Steps: ",steps)
+	
 
 
        
