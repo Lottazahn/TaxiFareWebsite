@@ -17,14 +17,9 @@ if st.button('Search'):
 	querystring = {"name":f"{name}",
 		       "tags":f"{tags}",
 		       "includeIngredients":f"{includeIngredients}",
-		       "excludeIngredients":"cinnamon",
 		       "maxPrepareTime":f"{maxPrepareTime}",
-		       "maxCookTime":"20",
 		       "maxCalories":f"{maxCalories}",
-		       "maxNetCarbs":"5",
-		       "maxSugar":"3",
-		       "maxAddedSugar":"0",
-		       "limit":"10"}
+		       }
 
 	headers = {
 		"X-RapidAPI-Key": "a1cbd55fa4msh4fe6d0f423ccb9ep1066a8jsna6b685db9cc1",
