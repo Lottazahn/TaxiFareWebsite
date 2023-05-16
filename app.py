@@ -31,7 +31,6 @@ if st.button('Search'):
 	response = requests.get(url, headers=headers, params=querystring)
 	tags_special = response.json()[0]
 	
-	st.write(response_name)
 	st.write("Special requirements: ",tags_special)
 
        
