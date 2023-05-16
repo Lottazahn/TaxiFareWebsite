@@ -45,7 +45,7 @@ if st.button('Search'):
 	maxCalories = response.json()[0]["nutrients"]
 	
 	for x in range(len(response.json()[0]["ingredients"])):
-        ingredient_name = response.json[0]["ingredients"][x]["name"]
+        	ingredient_name = response.json[0]["ingredients"][x]["name"]
      
 	
 	st.write(response_name, " | ", servings, " servings")
