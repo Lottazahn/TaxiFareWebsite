@@ -4,11 +4,11 @@ import requests
 st.title("What do I want to eat?")
 
 # What do we see?
-name = st.text_input("Any idea?", value="tasty")
-tags = st.text_input("Any specific requirement?", value="gluten-free")
-includeIngredients = st.text_input("Which ingredient must be included?", value="tomatoes")
-maxCalories = st.number_input("How many calories should it max have?", value=100)
-maxPrepareTime = st.number_input("How much time do I have (in minutes)?", value=50)
+name = st.text_input("Any idea?", value="cake")
+tags = st.text_input("Any specific requirement?", value="keto")
+includeIngredients = st.text_input("Which ingredient must be included?", value="egg")
+maxCalories = st.number_input("How many calories should it max have?", value=500)
+maxPrepareTime = st.number_input("How much time do I have (in minutes)?", value=20)
 
 # Button
 if st.button('Search'):
