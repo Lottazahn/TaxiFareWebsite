@@ -42,7 +42,6 @@ if st.button('Search'):
 	cookTime = response.json()[0]["cookTime"]
 	servings = response.json()[0]["servings"]
 	description = response.json()[0]["description"]
-	steps = response.json()[0]["steps"]
 	maxCalories = response.json()[0]["nutrients"]
      
 	
@@ -57,7 +56,9 @@ if st.button('Search'):
 		st.write("Ingredients: ", ingredient_name)
 		gggg = response.json()[0]["ingredients"][x]["servingSize"]
 		st.write("Serving size: ",gggg)
-	st.write("Steps: ",steps)
+	for x in range(len(response.json()[0]["steps"])):
+		steps_details = response.json()[0]["steps"][x]
+		st.write("Steps: ", steps_details)
 	
 
 	
