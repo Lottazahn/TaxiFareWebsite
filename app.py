@@ -32,15 +32,15 @@ if st.button('Search'):
 	}
 
 	response = requests.get(url, headers=headers, params=querystring)
-	response_name = response.json()["result"][0]["name"]
-	tags_special = response.json()["result"][0]["tags"]
-	description = response.json()["result"][0]["description"]
-	max_PrepareTime = response.json()["result"][0]["maxPrepareTime"]
-	cookTime = response.json()["result"][0]["cookTime"]
-	include_Ingredients = response.json()["result"][0]["includeIngredients"]
-	steps = response.json()["result"][0]["steps"]
-	servings = response.json()["result"][0]["servings"]
-	maxCalories = response.json()["result"][0]["maxCalories"]
+	response_name = response.json()[0]["0"]["name"]
+	tags_special = response.json()[0]["0"]["tags"]
+	description = response.json()[0]["0"]["description"]
+	max_PrepareTime = response.json()[0]["0"]["maxPrepareTime"]
+	cookTime = response.json()[0]["0"]["cookTime"]
+	include_Ingredients = response.json()[0]["0"]["includeIngredients"]
+	steps = response.json()[0]["0"]["steps"]
+	servings = response.json()[0]["0"]["servings"]
+	maxCalories = response.json()[0]["0"]["maxCalories"]
 
 	st.write(response_name)
 	st.write("Special requirements: ",tags_special)
