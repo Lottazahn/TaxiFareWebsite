@@ -15,13 +15,13 @@ if st.button('Search'):
     url = "https://low-carb-recipes.p.rapidapi.com/search"
 
 
-querystring = {"name":f"{cake}",
-	       "tags":f"{keto;dairy-free}",
-	       "includeIngredients":f"{egg;butter}",
+querystring = {"name":f"{name}",
+	       "tags":f"{tags}",
+	       "includeIngredients":f"{includeIngredients}",
 	       "excludeIngredients":"cinnamon",
-	       "maxPrepareTime":f"{10}",
+	       "maxPrepareTime":f"{maxPrepareTime}",
 	       "maxCookTime":"20",
-	       "maxCalories":f"{500}",
+	       "maxCalories":f"{maxCalories}",
 	       "maxNetCarbs":"5",
 	       "maxSugar":"3",
 	       "maxAddedSugar":"0",
